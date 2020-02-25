@@ -1,4 +1,18 @@
+# version of circleci (2.0, 2.1, end so on)
 version: 2.1
+
+# definition of execution in job
+commands:
+    sayhello:
+        description: "A very simple command for demonstration purposes"
+        parameters:
+            to:
+                type: string
+                default: "Hello World"
+        steps:
+            - run: echo << parameters.to >>
+
+# job part
 jobs:
     build:
         docker:
