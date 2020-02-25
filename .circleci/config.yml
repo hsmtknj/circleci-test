@@ -12,6 +12,12 @@ commands:
         steps:
             - run: echo << parameters.to >>
 
+# executors
+executros:
+    my-executor:
+        docker:
+            - image: circleci/ruby:2.5.1-node-browsers
+
 # job part
 jobs:
     build:
@@ -19,4 +25,4 @@ jobs:
             - image: circleci/node:4.8.2
         steps:
             - checkout
-            - run: echo "Hello World"
+            - run: echo "Hello World of Test Branch"
